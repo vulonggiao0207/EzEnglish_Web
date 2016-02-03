@@ -1,0 +1,8 @@
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\bin\Debug\DAO.dll.config
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\bin\Debug\DAO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\bin\Debug\DAO.pdb
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\bin\Debug\BO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\bin\Debug\BO.pdb
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\obj\Debug\DAO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\DAO\obj\Debug\DAO.pdb

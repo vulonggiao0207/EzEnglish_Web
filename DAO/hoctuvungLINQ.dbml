@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hoctuvung" Class="hoctuvungLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=&quot;C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\App_Data\hoctuvung.mdf&quot;;Integrated Security=True;User Instance=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="hoctuvungConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Banbe" Member="Banbes">
+    <Type Name="Banbe">
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taikhoanban" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="NguoiDung_Banbe" Member="NguoiDung" ThisKey="taikhoan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="NguoiDung_Banbe1" Member="NguoiDung1" ThisKey="taikhoanban" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TuVung" Member="TuVungs">
+    <Type Name="TuVung">
+      <Column Name="TuVungID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoaiTuID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TuVung" Member="TuVung1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NghiaTu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hinhanh" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Vidu" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SoLanSuDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLanSai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="kiemduyet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TuDienID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="LoaiTu_TuVung" Member="LoaiTu" ThisKey="LoaiTuID" OtherKey="LoaiTuID" Type="LoaiTu" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="NguoiDung_TuVung" Member="NguoiDung" ThisKey="taikhoan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="TuDien_TuVung" Member="TuDien" ThisKey="TuDienID" OtherKey="TudienID" Type="TuDien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CauHoi_DienDan" Member="CauHoi_DienDans">
+    <Type Name="CauHoi_DienDan">
+      <Column Name="CauHoiID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NgayGoi" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="CauHoi_DienDan_TraLoi_DienDan" Member="TraLoi_DienDans" ThisKey="CauHoiID" OtherKey="CauHoiID" Type="TraLoi_DienDan" />
+      <Association Name="NguoiDung_CauHoi_DienDan" Member="NguoiDung" ThisKey="taikhoan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiTu" Member="LoaiTus">
+    <Type Name="LoaiTu">
+      <Column Name="LoaiTuID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten_Anh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ten_Viet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LoaiTu_TuVung" Member="TuVungs" ThisKey="LoaiTuID" OtherKey="LoaiTuID" Type="TuVung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
+    <Type Name="NguoiDung">
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="matkhau" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dt" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="banned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="quyen" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="bannednick" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QLTDCongDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QLTuVungCongDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DuyetTu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="XemTuVungSai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QLThongTinWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QLDienDan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="NguoiDung_Banbe" Member="Banbes" ThisKey="taikhoan" OtherKey="taikhoan" Type="Banbe" />
+      <Association Name="NguoiDung_Banbe1" Member="Banbes1" ThisKey="taikhoan" OtherKey="taikhoanban" Type="Banbe" />
+      <Association Name="NguoiDung_TuVung" Member="TuVungs" ThisKey="taikhoan" OtherKey="taikhoan" Type="TuVung" />
+      <Association Name="NguoiDung_CauHoi_DienDan" Member="CauHoi_DienDans" ThisKey="taikhoan" OtherKey="taikhoan" Type="CauHoi_DienDan" />
+      <Association Name="NguoiDung_Nhom_TuDien" Member="Nhom_TuDiens" ThisKey="taikhoan" OtherKey="taikhoan" Type="Nhom_TuDien" />
+      <Association Name="NguoiDung_TinNhan" Member="TinNhans" ThisKey="taikhoan" OtherKey="Nguoigoi" Type="TinNhan" />
+      <Association Name="NguoiDung_TinNhan1" Member="TinNhans1" ThisKey="taikhoan" OtherKey="Nguoinhan" Type="TinNhan" />
+      <Association Name="NguoiDung_TraLoi_DienDan" Member="TraLoi_DienDans" ThisKey="taikhoan" OtherKey="taikhoan" Type="TraLoi_DienDan" />
+      <Association Name="NguoiDung_TuDien" Member="TuDiens" ThisKey="taikhoan" OtherKey="taikhoan" Type="TuDien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nhom_TuDien" Member="Nhom_TuDiens">
+    <Type Name="Nhom_TuDien">
+      <Column Name="TuDienID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Xem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Them" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Xoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sua" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dongy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="NguoiDung_Nhom_TuDien" Member="NguoiDung" ThisKey="taikhoan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="TuDien_Nhom_TuDien" Member="TuDien" ThisKey="TuDienID" OtherKey="TudienID" Type="TuDien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinNhan" Member="TinNhans">
+    <Type Name="TinNhan">
+      <Column Name="TinNhanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nguoigoi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Nguoinhan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="NgayGoi" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="XacNhan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="NguoiDung_TinNhan" Member="NguoiDung" ThisKey="Nguoigoi" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="NguoiDung_TinNhan1" Member="NguoiDung1" ThisKey="Nguoinhan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TraLoi_DienDan" Member="TraLoi_DienDans">
+    <Type Name="TraLoi_DienDan">
+      <Column Name="TraLoiID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CauHoiID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Noidung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NgayGoi" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="CauHoi_DienDan_TraLoi_DienDan" Member="CauHoi_DienDan" ThisKey="CauHoiID" OtherKey="CauHoiID" Type="CauHoi_DienDan" IsForeignKey="true" />
+      <Association Name="NguoiDung_TraLoi_DienDan" Member="NguoiDung" ThisKey="taikhoan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TuDien" Member="TuDiens">
+    <Type Name="TuDien">
+      <Column Name="TudienID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTuDien" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="CongDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="TuDien_TuVung" Member="TuVungs" ThisKey="TudienID" OtherKey="TuDienID" Type="TuVung" />
+      <Association Name="TuDien_Nhom_TuDien" Member="Nhom_TuDiens" ThisKey="TudienID" OtherKey="TuDienID" Type="Nhom_TuDien" />
+      <Association Name="NguoiDung_TuDien" Member="NguoiDung" ThisKey="taikhoan" OtherKey="taikhoan" Type="NguoiDung" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>

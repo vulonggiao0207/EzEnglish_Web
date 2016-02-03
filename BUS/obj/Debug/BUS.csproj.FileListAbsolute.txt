@@ -1,0 +1,9 @@
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\bin\Debug\BUS.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\bin\Debug\BUS.pdb
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\bin\Debug\BO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\bin\Debug\DAO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\bin\Debug\BO.pdb
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\bin\Debug\DAO.pdb
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\obj\Debug\BUS.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BUS\obj\Debug\BUS.pdb

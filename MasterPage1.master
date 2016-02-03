@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>hoctuvung.com</title>
+  <style type="text/css">
+        .modalBackground 
+        {
+            background-color:#333333;
+            filter:alpha(opacity=70);
+            opacity:0.7;    
+            overflow:scroll;    
+        }      
+    </style> 
+<meta name="keywords" content="Floral, CSS Template, XHTML, Free Download" />
+<meta name="description" content="Floral, Free CSS Template, XHTML CSS Layout" />
+<link href="Styles/templatemo_style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+    function clearText(field) {
+        if (field.defaultValue == field.value) field.value = '';
+        else if (field.value == '') field.value = field.defaultValue;
+    }
+</script>
+<!-- Hàm thay đổi hình ảnh -->
+ <script language="JavaScript1.1">
+var slideimages=new Array()
+var slidelinks=new Array()
+
+function slideshowimages(){
+  for (i=0;i<slideshowimages.arguments.length;i++){
+  slideimages[i]=new Image()
+  slideimages[i].src=slideshowimages.arguments[i]
+  }
+}
+
+function slideshowlinks(){
+  for (i=0;i<slideshowlinks.arguments.length;i++)
+  slidelinks[i]=slideshowlinks.arguments[i]
+}
+
+function gotoshow(){
+  if (!window.winslide||winslide.closed)
+    winslide=window.open(slidelinks[whichlink])
+  else
+    winslide.location=slidelinks[whichlink]
+    winslide.focus()
+}
+//-->
+</script>
+ <!-- End Of Hàm thay đổi hình ảnh -->
+ <style type="text/css">
+<!--
+.style1 {color: #FFF}
+     -->
+ </style>
+</head>
+ <body onLoad="thaydoi()">
+ <form id="form1" runat="server">
+	<div id="templatemo_container">  	  
+    	<div id="templatemo_header">
+       	  <div id="templatemo_logo">
+           	  <h1>hoctuvung.com</h1>
+          </div>
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">    
+      
+          </asp:ContentPlaceHolder>
+           
+            <div class="cleaner"></div>
+        </div>
+
+        <div id="templatemo_content_area_top">
+
+        	<div class="templatemo_left_top">
+			<div id="DangNhap"> 
+                <asp:Panel ID="DangNhapPanel" runat="server">
+                    <table style="margin:0px; width:320px; padding:0px">
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label1" runat="server" Font-Size="12pt" Text="Tài khỏan:"></asp:Label>
+                            </td>
+                            <td colspan="2">
+                                <asp:TextBox ID="TaiKhoanTextBox" runat="server" MaxLength="50" 
+                                Font-Size="12pt" Width="230px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="Label2" runat="server" Font-Size="12pt" Text="Mật khẩu:"></asp:Label>
+                            </td>
+                            <td colspan="2">
+                                <asp:TextBox ID="MatKhauTextBox" runat="server" MaxLength="50" 
+                                Font-Size="12pt" TextMode="Password" Width="230px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                <asp:Button ID="DangNhapButton" runat="server" Text="Đăng nhập" 
+                                Font-Size="12pt" onclick="DangNhapButton_Click" />
+                            </td>
+                            <td>
+                                <asp:Button ID="DangKyButton" runat="server" Text="Đăng ký" 
+                                Font-Size="12pt" onclick="DangKyButton_Click" />
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                <asp:Panel ID="DangXuatPanel" runat="server" Visible="false">
+                  <table style="margin:0px; width:320px; padding:0px">
+                     <tr>
+                     <td>
+                         <asp:LinkButton ID="ChaoLink" runat="server" Font-Size="11.5pt" 
+                             ForeColor="Blue" onclick="ChaoLink_Click" 
+                             PostBackUrl="~/quanlynhomban.aspx">Chào, bạn có tin nhắn mới</asp:LinkButton>
+                     </td>
+                     </tr>
+                     <tr>
+                     <td>
+                        <asp:LinkButton ID="TaiKhoanCaNhanLink" runat="server" Font-Size="11.5pt" 
+                             ForeColor="Blue" onclick="TaiKhoanCaNhanLink_Click" 
+                             PostBackUrl="~/taikhoan.aspx">Tài khỏan cá nhân</asp:LinkButton>
+                     </td>
+                     </tr>
+                     <tr>
+                     <td>
+                     <asp:LinkButton ID="DangXuatLink" runat="server" Font-Size="11.5pt" 
+                             ForeColor="Blue" onclick="DangXuatLink_Click">Đăng xuất</asp:LinkButton>
+                     </td>
+                     </tr>
+                    </table>
+                </asp:Panel>
+            
+			</div>
+        	  <div class="templatemo_news">
+                	<p><a href="tratu.aspx?lang=eng">TỪ ĐIỂN ANH - VIỆT</a></p>
+              </div>
+			  
+			  <div class="templatemo_news">
+                	<p><a href="tratu.aspx?lang=vn">TỪ ĐIỂN VIỆT - ANH </a></p>
+              </div>           
+		  </div>        	  
+		 
+   
+       	  <div class="templatemo_right_top" >		
+		  <a href="javascript:gotoshow()"><img src="images/slides/slide4.jpg" name="slide" border=0 height="255" width="475">		  </a>
+		  <!--code thay đổi hình ảnh-->
+		  <script>
+				<!--
+		      //configure the paths of the images, plus corresponding target links
+		      slideshowimages("images/slides/slide4.jpg", "images/slides/slide2.jpg", "images/slides/slide3.jpg", "images/slides/slide1.jpg")
+		      slideshowlinks("#", "#", "#", "#")
+
+		      //configure the speed of the slideshow, in miliseconds
+		      var slideshowspeed = 2000
+		      var whichlink = 0
+		      var whichimage = 0
+
+		      function slideit() {
+		          if (!document.images)
+		              return
+		          document.images.slide.src = slideimages[whichimage].src
+		          whichlink = whichimage
+
+		          if (whichimage < slideimages.length - 1)
+		              whichimage++
+		          else
+		              whichimage = 0
+		          setTimeout("slideit()", slideshowspeed)
+		      }
+		      slideit()
+				//-->
+			</script>
+			<!--code thay đổi hình ảnh-->
+		  </div>	
+            <div class="cleaner"></div>
+      </div>
+      <!-- End Of Content area top -->      
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">    
+      
+          </asp:ContentPlaceHolder>
+          </form>
+         
+	<div id="templatemo_footer">
+    	Copyright © 2048 <a href="#" target="_blank" class="style1">Your Company Name</a> | <a href="http://www.iwebsitetemplate.com" target="_parent" class="style1">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" class="style1">Free CSS Templates</a>      
+        </div>
+    
+    </div><!-- End Of Container -->
+<!--  Free CSS Templates by TemplateMo.com  -->
+</body>
+</html>

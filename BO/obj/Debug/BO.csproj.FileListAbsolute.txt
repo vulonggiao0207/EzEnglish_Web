@@ -1,0 +1,5 @@
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BO\bin\Debug\BO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BO\bin\Debug\BO.pdb
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BO\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BO\obj\Debug\BO.dll
+C:\Documents and Settings\VanVan\My Documents\Visual Studio 2010\WebSites\hoctuvung\BO\obj\Debug\BO.pdb
